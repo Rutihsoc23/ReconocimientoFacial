@@ -1,0 +1,13 @@
+Fase 1 – Comprensión del Negocio (Business Understanding)
+Definición del Problema:
+El equipo debe crear un sistema de reconocimiento facial capaz de identificar de manera precisa a cada uno de sus integrantes (máximo cinco personas) a partir de una captura de la cámara en tiempo real. Este sistema permitirá automatizar procesos como el registro de asistencia o control de acceso, utilizando una Red Neuronal Convolucional (CNN) entrenada con imágenes reales de los miembros del equipo.
+Criterios de Éxito:
+El modelo entrenado deberá alcanzar una precisión (accuracy) superior al 90% en el conjunto de prueba (test set).
+Además, la aplicación móvil deberá ejecutar la inferencia del modelo en un tiempo menor a 500 milisegundos (ms) por frame en un dispositivo móvil promedio, asegurando un rendimiento adecuado en tiempo real.
+Identificación de Datos Necesarios:
+Para el entrenamiento del sistema se requiere recolectar imágenes faciales de cada integrante del grupo.
+Cantidad mínima recomendada: 100 imágenes por persona.
+Variabilidad requerida: cambios de pose, iluminación, expresión facial y fondo.
+Formato sugerido: JPEG o PNG.
+Dimensiones aproximadas: entre 128×128 y 224×224 píxeles.
+Estas imágenes constituirán la base de datos que permitirá entrenar, validar y probar el modelo de reconocimiento facial.
