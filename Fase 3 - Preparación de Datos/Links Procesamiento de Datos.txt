@@ -1,0 +1,4 @@
+Link de Dataset_Procesado
+https://drive.google.com/drive/folders/1M_G8rZpce2ETMztw5NLSo1lcYBe-tNlL?usp=sharing
+Link de Google Colab
+https://colab.research.google.com/drive/1WuJ3eISfUFzRk-Mj0kkG6CuGRzKQtytK?usp=sharing
