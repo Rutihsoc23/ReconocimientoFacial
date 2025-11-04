@@ -1,0 +1,23 @@
+--- 📊 Iniciando análisis de: D:\Universidad Continental\202502\Construcción de Software\Unidad 3\Reconocimiento Facial\dataset ---
+
+## 1. Cantidad de Imágenes (Total: 200) ##
+  - Clase 'Carlos': 100 imágenes
+  - Clase 'Oscar': 100 imágenes
+
+## 2. Balance de Clases ##
+  - Imágenes por clase: Mínimo=100, Máximo=100
+  - El dataset está razonablemente balanceado.
+
+## 3. Dimensiones Promedio ##
+  - Tamaño promedio: 1764 x 2389 px (Ancho x Alto)
+
+## 4. Consistencia de Formato ##
+  - .jpg: 200 archivos
+  - Buena consistencia: Todas las imágenes tienen el mismo formato.
+
+## 5. Condiciones de Captura (Análisis Manual) ##
+  - Este análisis debe ser visual.
+  - Abre la carpeta y revisa una muestra de imágenes.
+  - Busca variaciones en: Iluminación (sombras), Fondo (complejidad) y Pose (frontal, perfil, etc.).
+
+--- ✅ Análisis completado ---
