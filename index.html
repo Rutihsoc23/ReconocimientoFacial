@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía - Taller de Reconocimiento Facial</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .participants {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .participants h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+        
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .participant-card {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .participant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .participant-name {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        .participant-contribution {
+            color: var(--success-color);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .summary {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .summary h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary-color), #5dade2);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight-box h3 {
+            margin-bottom: 10px;
+        }
+        
+        .methodology {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .methodology h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .phase-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .phase-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .phase-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .phase-title {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .results {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .results h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, var(--secondary-color), #5dade2);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+        }
+        
+        .github-link {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .github-link h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .github-button {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .github-button:hover {
+            background-color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .phase-container, .metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">UNIVERSIDAD CONTINENTAL SEDE CUSCO</div>
+                <h1>Taller de Reconocimiento Facial</h1>
+                <div class="logo">INGENIERÍAS</div>
+            </div>
+            <div class="subtitle">Docente: Ing. Hugo Espetia Huamanga</div>
+        </header>
+        
+        <section class="participants">
+            <h2>Equipo de Trabajo</h2>
+            <div class="participants-grid">
+                <div class="participant-card">
+                    <div class="participant-name">Mamani Ccayacillea Emerson</div>
+                    <div class="participant-contribution">Aporte: 100%</div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-name">Cordova Sucapuca Jodi</div>
+                    <div class="participant-contribution">Aporte: 100%</div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-name">Lope Pari Juan Carlos</div>
+                    <div class="participant-contribution">Aporte: 100%</div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-name">Espinoza Nieto Oscar Alithoon</div>
+                    <div class="participant-contribution">Aporte: 100%</div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-name">Barrios Morales Bruce Saul</div>
+                    <div class="participant-contribution">Aporte: 100%</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="summary">
+            <h2>Resumen del Proyecto</h2>
+            <p>Desarrollo de un sistema de reconocimiento facial de extremo a extremo utilizando Redes Neuronales Convolucionales (CNN) para la clasificación de rostros. La metodología sigue el ciclo de vida CRISP-ML, abarcando desde la comprensión del problema hasta el despliegue del modelo.</p>
+            
+            <div class="highlight-box">
+                <h3>Resultados Destacados</h3>
+                <p>El modelo final alcanzó una precisión (accuracy) del 75.56% en el conjunto de pruebas. Para el despliegue, el modelo fue optimizado y convertido al formato TensorFlow Lite (TFLite), demostrando la viabilidad de soluciones de reconocimiento facial robustas y en tiempo real en entornos con recursos limitados.</p>
+            </div>
+        </section>
+        
+        <section class="methodology">
+            <h2>Metodología CRISP-ML</h2>
+            <div class="phase-container">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3 class="phase-title">Comprensión del Negocio y del Problema</h3>
+                    <p>Desarrollar un sistema capaz de identificar a un individuo a partir de un conjunto predefinido de 3 personas, utilizando la cámara de un dispositivo móvil en tiempo real.</p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3 class="phase-title">Comprensión de los Datos</h3>
+                    <p>Dataset propio con 300 imágenes de 3 individuos. Análisis exploratorio identificó variaciones en iluminación, pose y oclusión.</p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">3</div>
+                    <h3 class="phase-title">Preparación de los Datos</h3>
+                    <p>Detección facial con Haar Cascade, alineamiento, recorte, redimensionado a 128x128 píxeles, normalización y aumento de datos.</p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">4</div>
+                    <h3 class="phase-title">Modelado</h3>
+                    <p>Arquitectura CNN basada en MobileNetV2. Entrenamiento con TensorFlow/Keras, función de pérdida CategoricalCrossentropy, optimizador Adam.</p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">5</div>
+                    <h3 class="phase-title">Evaluación</h3>
+                    <p>Evaluación cuantitativa con métricas de clasificación (Accuracy, Precisión, Recall, F1-Score) y análisis cualitativo con matriz de confusión.</p>
+                </div>
+                
+                <div class="phase-card">
+                    <div class="phase-number">6</div>
+                    <h3 class="phase-title">Despliegue</h3>
+                    <p>Conversión a TensorFlow Lite, optimización mediante cuantización e integración en aplicación móvil para inferencia en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="results">
+            <h2>Resultados y Métricas</h2>
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-value">75.56%</div>
+                    <div class="metric-label">Precisión (Accuracy)</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Individuos Clasificados</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">300</div>
+                    <div class="metric-label">Imágenes en Dataset</div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-value">20</div>
+                    <div class="metric-label">Épocas de Entrenamiento</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="github-link">
+            <h2>Repositorio del Proyecto</h2>
+            <p>Todo el código fuente y documentación del proyecto están disponibles en GitHub:</p>
+            <a href="https://github.com/Ruthsoc23/ReconocimientoFacial" class="github-button" target="_blank">Ver en GitHub</a>
+        </section>
+        
+        <footer>
+            <p>Taller de Reconocimiento Facial - Universidad Continental Sede Cusco</p>
+            <p>Ingenierías - Docente: Ing. Hugo Espetia Huamanga</p>
+        </footer>
+    </div>
+</body>
+</html>
