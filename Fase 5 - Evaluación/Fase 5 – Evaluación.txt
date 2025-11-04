@@ -1,0 +1,14 @@
+Fase 5 – Evaluación (Evaluation)
+
+Accuracy global: 75.56%
+
+Criterios de éxito:
+- Precisión > 90% (No alcanzado)
+- Inferencia < 500 ms por frame (pendiente de probar)
+
+Análisis:
+El modelo logró un rendimiento aceptable con un accuracy del 75.56%. 
+Las clases “Carlos” y “Jodi” mostraron altos niveles de recall (87% y 93%), mientras que “Oscar” presentó confusiones frecuentes con las otras dos clases, probablemente por condiciones de iluminación o poca variabilidad en sus fotos.
+
+Conclusión:
+El modelo aún requiere ajustes de hiperparámetros, aumento de datos para cumplir con los criterios de éxito y revisión manual de la preparación de datos. Sin embargo, demuestra una base sólida para optimizar y desplegar en la fase siguiente (Deployment).
