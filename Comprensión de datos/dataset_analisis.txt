@@ -1,7 +1,8 @@
 --- 📊 Iniciando análisis de: D:\Universidad Continental\202502\Construcción de Software\Unidad 3\Reconocimiento Facial\dataset ---
 
-## 1. Cantidad de Imágenes (Total: 200) ##
+## 1. Cantidad de Imágenes (Total: 300) ##
   - Clase 'Carlos': 100 imágenes
+  - Clase 'Jodi': 100 imágenes
   - Clase 'Oscar': 100 imágenes
 
 ## 2. Balance de Clases ##
@@ -9,15 +10,19 @@
   - El dataset está razonablemente balanceado.
 
 ## 3. Dimensiones Promedio ##
-  - Tamaño promedio: 1764 x 2389 px (Ancho x Alto)
+  - Tamaño promedio: 1573 x 2203 px (Ancho x Alto)
 
 ## 4. Consistencia de Formato ##
-  - .jpg: 200 archivos
+  - .jpg: 300 archivos
   - Buena consistencia: Todas las imágenes tienen el mismo formato.
 
 ## 5. Condiciones de Captura (Análisis Manual) ##
   - Este análisis debe ser visual.
   - Abre la carpeta y revisa una muestra de imágenes.
   - Busca variaciones en: Iluminación (sombras), Fondo (complejidad) y Pose (frontal, perfil, etc.).
+  Análisis Manual:
+	- En lo que respecta a fondos se perciben variaciones en paisajes, la mayoría de ellos son en una habitación con muros de diseños simples, se observan un 		  aproximado de 10 fondos, algunos de los siguientes son: Descampado, Montaña, Arquitecturas, Habitaciones, Paraderos.
+	- Iluminación, en los grupos de Jodi y Carlos se evidencia mayor cambio en la iluminación, sombras e incluso tonos de luz.
+	- Pose, en cada grupo se evidencia bastantes cambios en los ángulos, desde arriba, abajo, perfil, 3/4, etc.
 
 --- ✅ Análisis completado ---
